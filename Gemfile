@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.0'
 
+gem 'bootstrap'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails', '~> 5.2.1'
@@ -13,7 +14,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'bootstrap'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'pry-byebug'
 gem 'pry-rails'
@@ -38,6 +38,7 @@ group :development do
   gem 'bullet'
   gem 'colorize'
   gem 'overcommit'
+  gem 'rubocop', require: false
   gem 'table_print'
   gem 'xray-rails'
 end
