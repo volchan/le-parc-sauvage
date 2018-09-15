@@ -17,6 +17,9 @@
 #                           DELETE /users(.:format)                                                                         devise/registrations#destroy
 #                           POST   /users(.:format)                                                                         devise/registrations#create
 #                      root GET    /                                                                                        pages#home
+#                   contact GET    /contact(.:format)                                                                       pages#contact
+#               sponsorship GET    /sponsorship(.:format)                                                                   pages#sponsorship
+#                      team GET    /team(.:format)                                                                          pages#team
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -26,6 +29,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-
+  resources :posts
+  get :contact, to: 'pages#contact'
+  get :sponsorship, to: 'pages#sponsorship'
+  get :team, to: 'pages#team'
 end
