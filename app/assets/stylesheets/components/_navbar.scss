@@ -29,21 +29,22 @@
 
 .navbar-wagon a {
   color: $light-gray;
+
 }
 
 .navbar-wagon-white {
   background: $parc-green;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   .navbar-wagon-link {
-  color: $parc-black !important;
+  color: $parc-white !important;
   }
   .navbar-typo {
-  color: $parc-black;
+  color: $parc-white;
   }
 }
 
 .navbar-wagon-white a {
-  color: $parc-black;
+  color: $parc-white;
 }
 
 /* Logo */
@@ -68,10 +69,10 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: $parc-white !important;
-  font-size: 14px;
+  font-size: 16px;
 }
 .navbar-wagon-link a:hover {
-  color: $parc-orange !important;
+  color: $parc-lightorange !important;
   text-decoration: none;
 }
 
