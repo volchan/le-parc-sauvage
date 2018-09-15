@@ -36,4 +36,6 @@ class User < ApplicationRecord
 
   has_many :tickets, dependent: :nullify
   has_many :posts, dependent: :destroy
+
+  has_one_attached :avatar
 end
