@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  width : auto;
+}
+
+.section img {
+  height: 400px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  flex-direction: column;
+  padding: 0 25px;
+}
+
+.wrapper-orange {
+ background: $parc-lightorange;
+}
+
+.wrapper-white {
+ background: $parc-white;
+}
+
+.margin-top-null {
+  margin-top: 0 !important;
+}
