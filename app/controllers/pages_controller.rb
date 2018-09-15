@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home, :contact, :team, :sponsorship
+  skip_before_action :authenticate_user!, only: %I[home contact team sponsorship]
 
   def home; end
 
