@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+  <%= post.title %>
+  <%= post.content %>
+<%= link_to "Lire la suite", post_path(@post) %>
+<% end %>
+
+
+
+<%= link_to "Ajouter un article", new_post_path %>
+

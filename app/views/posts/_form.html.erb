@@ -1,0 +1,8 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :title, label: "Titre" %>
+  <%= f.input :content, as: :text %>
+  <%= f.button :submit, value: 'Publier cet article'%>
+  <% end %>
+
+<%= link_to "Retour à l'accueil", posts_path %>
+
