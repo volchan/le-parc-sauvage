@@ -144,6 +144,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    mapbox-gl-rails (0.49.0)
+      railties (>= 3.2, < 6.0)
     marcel (0.3.2)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
@@ -316,6 +318,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mapbox-gl-rails
   overcommit
   pg (>= 0.18, < 2.0)
   pry-byebug
