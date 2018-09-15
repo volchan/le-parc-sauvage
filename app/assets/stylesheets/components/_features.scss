@@ -9,7 +9,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.6;
+  opacity: 0.8;
+  margin-bottom: 20px;
 
   .feature-card-img {
     border: 5px $parc-white solid;
@@ -38,6 +39,7 @@
 
 .feature-card:hover{
   opacity: 1;
+  cursor: pointer;
 }
 
 @keyframes float {
