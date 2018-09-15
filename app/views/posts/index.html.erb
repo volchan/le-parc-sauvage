@@ -11,19 +11,23 @@
       <div class="post-title-index">
         <%= post.title %>
       </div>
-      <div class="photo-index">
-        <%= image_tag(url_for(post.photo))%>
+      <div class="card-inside d-flex">
+        <div class="photo-index">
+          <%= image_tag(url_for(post.photo))%>
+        </div>
+        <div class="post-content-index">
+          <%= post.content.first(400) %> (...)
+          <div class="card-button">
+            <%= link_to "Lire la suite", post_path(post), class: "button content-btn" %>
+          </div>
+        </div>
       </div>
-      <div class="post-content-index">
-        <%= post.content.first(400) %> (...)
-      </div>
-        <%= link_to "Lire la suite", post_path(post), class: "button" %>
     </div>
     <% end %>
 
     <% if current_user.admin? %>
         <div class="index-link">
-          <%= link_to "Ajouter un article", new_admin_post_path, class: "button" %>
+          <%= link_to "Ajouter un article", new_admin_post_path, class: "button card-button" %>
         </div>
     <% end %>
 
