@@ -12,7 +12,9 @@
 // Your CSS partials
 // @import "layouts/index";
 @import "components/index";
+@import "components/button";
 @import "pages/index";
+@import "posts/posts";
 // @import "posts/index";
 
 body {
@@ -20,4 +22,10 @@ body {
   min-height: 150vh;
 }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
 

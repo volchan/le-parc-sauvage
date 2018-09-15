@@ -29,8 +29,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :posts
+  resources :posts, only: %I[index show]
   get :contact, to: 'pages#contact'
   get :sponsorship, to: 'pages#sponsorship'
   get :team, to: 'pages#team'
+
+  authenticate :user, ->(u) {u.admin} do
+    namespace :admin do
+      root to:'posts#new'
+      resources :posts, only: %I[new create edit update destroy]
+    end
+  end
 end
