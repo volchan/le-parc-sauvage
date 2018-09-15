@@ -4,6 +4,7 @@
 #
 #  id         :bigint(8)        not null, primary key
 #  content    :text
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint(8)
@@ -19,6 +20,5 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-
   has_one_attached :photo
 end
