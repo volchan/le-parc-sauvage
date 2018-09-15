@@ -29,6 +29,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  resources :posts
   get :contact, to: 'pages#contact'
   get :sponsorship, to: 'pages#sponsorship'
   get :team, to: 'pages#team'
