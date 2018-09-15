@@ -2,16 +2,22 @@
   <div class="row">
     <div class="col">
 
-  <%= @post.title %>
-  <div class="photo-index">
-    <%= image_tag(url_for(@post.photo))%>
-  </div>
-  <%= @post.content %> <br>
+      <div class="post-card-index">
+        <div class="post-title-index">
+          <div class="post-title-index">
+            <%= @post.title %>
+          </div>
+          <div class="photo-index">
+            <%= image_tag(url_for(@post.photo))%>
+          </div>
+          <%= @post.content %> <br>
 
-    <%= link_to "Modifier mon article", edit_admin_post_path(@post), class: "button" %>
-    <%= link_to "Supprimer cet article", admin_post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" }, class: "button" %>
-  <br>
-    <%= link_to "Retour à tous les articles", posts_path, class: "button" %>
+          <%= link_to "Modifier mon article", edit_admin_post_path(@post), class: "button" %>
+          <%= link_to "Supprimer cet article", admin_post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" }, class: "button" %>
+        <br>
+          <%= link_to "Retour à tous les articles", posts_path, class: "button" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@
         <%= image_tag(url_for(post.photo))%>
       </div>
       <div class="post-content-index">
-        <%= post.content %>
+        <%= post.content.first(400) %> (...)
       </div>
         <%= link_to "Lire la suite", post_path(post), class: "button" %>
     </div>
