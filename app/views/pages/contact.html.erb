@@ -1,11 +1,36 @@
-<h1>Contact</h1>
+<div class="container">
+  <h1 style="text-align:center;">Contact</h1>
 
-<h3>Addresse</h3>
+  <h3>Adresse</h3>
+  <p>Le Parc Sauvage <br />
+  C.I.R.C.A.S <br />
+  D84 <br />
+  24320 La Tour Blanche Cercles </p>
+  <h3>Accès</h3>
 
-<h3>Accès</h3>
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"></div>
 
-<h3>Vous avez des questions ?</h3>
+  <h3>Vous avez des questions ?</h3>
 
-<h4>Téléphone</h4>
+  <h4>Téléphone</h4>
+  <p>06.83.10.87.39</p>
+  <h4>Email</h4>
+  <%= mail_to("contactflyprod@gmail.com") %>
+</div>
 
-<h4>Email</h4>
+
+<script>
+  var map = new mapboxgl.Map({
+  container: 'map', // HTML container id
+  style: 'mapbox://styles/mapbox/streets-v9', // style URL
+  center: [0.426193, 45.359098], // starting position as [lng, lat]
+  zoom: 13
+});
+
+  var marker = new mapboxgl.Marker()
+.setLngLat([0.426193, 45.359098])
+.addTo(map);
+</script>
