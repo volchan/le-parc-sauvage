@@ -4,6 +4,7 @@
   background-position: center;
   position: relative;
   overflow: hidden;
+  margin: 14px auto;
 }
 
 .card-titles {
@@ -39,7 +40,7 @@
 .card-team:hover {
 
   .card-titles {
-    top: 0;
+    top: 20px;
     transform: translateY(0%);
   }
   .card-content {
