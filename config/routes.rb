@@ -34,6 +34,12 @@ Rails.application.routes.draw do
   get :sponsorship, to: 'pages#sponsorship'
   get :team, to: 'pages#team'
 
+  namespace :ticketing, path: 'billetterie' do
+    root to: 'items#index'
+    resources :tickets, only: %I[create show]
+    get '/:ticket_id/merci', to: 'tickets#thank_you', as: :thank_you
+  end
+
   authenticate :user, ->(u) {u.admin} do
     namespace :admin do
       root to:'posts#new'
