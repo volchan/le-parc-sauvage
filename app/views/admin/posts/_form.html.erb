@@ -10,8 +10,16 @@
       <% end %>
       <%= link_to "Retour à tous les articles", posts_path, class: "button" %>
 
+
     </div>
   </div>
 </div>
+<%= content_for :after_js do %>
+<script>
+$('.custom-file-input').on('change',function(){
+      $('.custom-file-label').html($(this).val());
+    });
+</script>
+<% end %>
 
 

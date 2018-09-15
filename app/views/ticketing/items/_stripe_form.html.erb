@@ -1,0 +1,14 @@
+<form action="<%= ticketing_tickets_path %>" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :item_id, item.id %>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_632flUKgRrL9NaJO3sPfosY3"
+    data-amount="<%= item.price_cents %>"
+    data-name="Le Parc Sauvage"
+    data-description="<%= item.name %>"
+    data-image="<%= image_path('owl.png') %>"
+    data-locale="fr"
+    data-currency="eur">
+  </script>
+</form>

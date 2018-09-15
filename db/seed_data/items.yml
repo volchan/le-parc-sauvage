@@ -1,0 +1,24 @@
+- name: 0 à 3 ans
+  price_cents: 0
+  i_type: 0
+- name: 3 à 12 ans
+  price_cents: 500
+  i_type: 0
+- name: 13 et +
+  price_cents: 800
+  i_type: 0
+- name: Visite guidée (par groupe de 10 maximum) durée 45 min
+  price_cents: 1000
+  i_type: 0
+- name: Par personne
+  price_cents: 350
+  i_type: 1
+- name: Accompagnateur pour un groupe de 10
+  price_cents: 200
+  i_type: 1
+- name: Visite guidée (par groupe de 12 maximum) durée 45 min
+  price_cents: 5000
+  i_type: 1
+- name: Stages de découverte de la fauconnerie à partir de 10 ans(durée 2h, comprenant entrée et spectacle)
+  price_cents: 7000
+  i_type: 1

@@ -2,11 +2,11 @@
   <!-- Logo & Name -->
   <div class="navbar-left">
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "logo.png", height: 50 %>
+      <%= image_tag "eagle.png", height: 50 %>
     <% end %>
-    <div class="navbar-typo">
+<!--     <div class="navbar-typo">
      <span>Le Parc Sauvage</span>
-    </div>
+    </div> -->
   </div>
 
 
@@ -14,7 +14,7 @@
  <div class="navbar-wagon-right hidden-xs hidden-sm navbar-wagon-link">
 
   <!-- Links when logged in -->
-  <%= link_to "Billetterie", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Billetterie", ticketing_root_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Blog", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Equipe", team_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Parrainage", sponsorship_path, class: "navbar-wagon-item navbar-wagon-link" %>
