@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_114736) do
+ActiveRecord::Schema.define(version: 2018_09_15_174553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2018_09_15_114736) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "items", force: :cascade do |t|
+    t.integer "price_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "i_type"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
@@ -44,20 +52,15 @@ ActiveRecord::Schema.define(version: 2018_09_15_114736) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "prices", force: :cascade do |t|
-    t.integer "amout"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tickets", force: :cascade do |t|
-    t.bigint "price_id"
     t.bigint "user_id"
     t.integer "additional"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
-    t.index ["price_id"], name: "index_tickets_on_price_id"
+    t.string "stripe_token"
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_tickets_on_item_id"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
@@ -85,6 +88,5 @@ ActiveRecord::Schema.define(version: 2018_09_15_114736) do
   end
 
   add_foreign_key "posts", "users"
-  add_foreign_key "tickets", "prices"
   add_foreign_key "tickets", "users"
 end

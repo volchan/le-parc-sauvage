@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag 'application' %>
+  </head>
+  <body onload='number_pages'>
+    <p><%= @ticket.user.full_name %></p>
+    <p><%= @ticket.item.name %></p>
+    <p><%= @ticket.item.format_price %></p>
+    <p><%= @ticket.code %></p>
+  </body>
+</html>
