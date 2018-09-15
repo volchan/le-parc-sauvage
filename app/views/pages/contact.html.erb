@@ -1,36 +1,72 @@
 <div class="container">
-  <h1 style="text-align:center;">Contact</h1>
+  <div class="row text-center">
+    <div class="col">
+      <h1 class="text-center">Contact</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3><i class="fas fa-calendar-alt"></i> Horaires d'ouverture</h3>
+      <p><strong>Novembre à mars</strong><br />
+      Du jeudi au dimanche (10h00 - 16h30) <br />
+      Démonstration à 15h00 <br />
+      <strong>Avril à juin - septembre à octobre</strong> <br />
+      Du lundi au dimanche (10h00 - 18h00) <br />
+      Démonstration à 11h15/15h00 <br />
+      <strong>Juillet et août</strong> <br />
+      Du lundi au dimanche (9h30 - 18h00) <br />
+      Démonstration à 11h00/14h30/17h00</p>
+      <p>Les démonstrations sont susceptibles d’être annulées en fonction des conditions climatiques.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3><i class="fas fa-map-marker-alt"></i>Adresse</h3>
+      <p>Le Parc Sauvage <br />
+      C.I.R.C.A.S <br />
+      D84 <br />
+      24320 La Tour Blanche Cercles </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3><i class="fas fa-road"></i> Accès</h3>
+      <div
+      id="map"
+      style="width: 100%;
+      height: 400px;
+      "></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col pt-3">
+    <h3><i class="fas fa-info-circle"></i> Contactez-nous</h3>
+    <h4>Téléphone</h4>
+    <p>06.83.10.87.39</p>
+    <h4>Email</h4>
+    <%= mail_to("contactflyprod@gmail.com") %>
+    </div>
+  </div>
+ </div>
 
-  <h3>Adresse</h3>
-  <p>Le Parc Sauvage <br />
-  C.I.R.C.A.S <br />
-  D84 <br />
-  24320 La Tour Blanche Cercles </p>
-  <h3>Accès</h3>
-
-  <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"></div>
-
-  <h3>Vous avez des questions ?</h3>
-
-  <h4>Téléphone</h4>
-  <p>06.83.10.87.39</p>
-  <h4>Email</h4>
-  <%= mail_to("contactflyprod@gmail.com") %>
-</div>
 
 
-<script>
-  var map = new mapboxgl.Map({
-  container: 'map', // HTML container id
-  style: 'mapbox://styles/mapbox/streets-v9', // style URL
-  center: [0.426193, 45.359098], // starting position as [lng, lat]
-  zoom: 13
-});
 
-  var marker = new mapboxgl.Marker()
-.setLngLat([0.426193, 45.359098])
-.addTo(map);
-</script>
+
+<%= content_for :after_js do %>
+  <script>
+    mapboxgl.accessToken = "<%= Rails.application.credentials.dig(:mapbox, :secret_key) %>"
+    const map = new mapboxgl.Map({
+    container: 'map', // HTML container id
+    style: 'mapbox://styles/mapbox/streets-v9', // style URL
+    center: [0.426193, 45.359098], // starting position as [lng, lat]
+    zoom: 9
+  });
+
+    const marker = new mapboxgl.Marker()
+  .setLngLat([0.426193, 45.359098])
+  .addTo(map);
+
+    map.addControl(new mapboxgl.NavigationControl());
+  </script>
+<% end %>
