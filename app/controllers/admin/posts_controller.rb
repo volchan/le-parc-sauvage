@@ -1,14 +1,5 @@
-class PostsController < ApplicationController
-  before_action :set_post, only: %I[show edit update destroy]
-
-  skip_before_action :authenticate_user!, only: %I[index show]
-  def index
-    @posts = Post.all
-  end
-
-  def show
-    @post = Post.find(params[:id])
-  end
+class Admin::PostsController < ApplicationController
+  before_action :set_post, only: %I[edit update destroy]
 
   def new
     @post = Post.new
@@ -43,7 +34,10 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :title, :user_id)
+    params.require(:post).permit(:content, :title, :user_id, :photo)
   end
 
+  def check_admin?
+    current_user.admin
+  end
 end

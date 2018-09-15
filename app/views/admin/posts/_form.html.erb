@@ -1,6 +1,7 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for(@post, url: path) do |f| %>
   <%= f.input :title, label: "Titre" %>
   <%= f.input :content, as: :text %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, value: 'Publier cet article'%>
 <% end %>
 

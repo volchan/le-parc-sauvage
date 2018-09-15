@@ -1,7 +1,17 @@
-<%= @post.title %>
-<%= @post.content %>
+<div class="container">
+  <div class="row">
+    <div class="col">
 
-<%= link_to "Modifier mon article", edit_post_path(@post) %>
-<%= link_to "Supprimer cet article", post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" } %>
+  <%= @post.title %>
+  <div class="photo-index">
+    <%= image_tag(url_for(@post.photo))%>
+  </div>
+  <%= @post.content %> <br>
 
-<%= link_to "Retour à tous les articles", posts_path %>
+    <%= link_to "Modifier mon article", edit_admin_post_path(@post), class: "button" %>
+    <%= link_to "Supprimer cet article", admin_post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" }, class: "button" %>
+  <br>
+    <%= link_to "Retour à tous les articles", posts_path, class: "button" %>
+    </div>
+  </div>
+</div>
