@@ -49,10 +49,6 @@
   </div>
  </div>
 
-
-
-
-
 <%= content_for :after_js do %>
   <script>
     mapboxgl.accessToken = "<%= Rails.application.credentials.dig(:mapbox, :secret_key) %>"
