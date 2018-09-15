@@ -25,7 +25,8 @@
     </div>
     <% end %>
 
-    <% if current_user.admin? %>
+
+    <% if user_signed_in? and current_user.admin? %>
         <div class="index-link">
           <%= link_to "Ajouter un article", new_admin_post_path, class: "button card-button" %>
         </div>
