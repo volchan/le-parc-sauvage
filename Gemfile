@@ -29,6 +29,7 @@ end
 group :development do
   gem 'annotate'
   gem 'awesome_print'
+  gem 'aws-sdk-s3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'brakeman', require: false
