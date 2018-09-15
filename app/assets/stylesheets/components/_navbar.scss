@@ -1,0 +1,79 @@
+/* Main navbar */
+.navbar-wagon {
+  background: transparent;
+  transition: all 0.3s ease;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-left {
+  font-family: 'Nunito', sans-serif;
+  color: $parc-white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-typo {
+  padding: 0;
+  margin-left: 15px;
+}
+
+
+.navbar-wagon a {
+  color: $light-gray;
+
+}
+
+.navbar-wagon-white {
+  background: $parc-green;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  .navbar-wagon-link {
+  color: $parc-white !important;
+  }
+  .navbar-typo {
+  color: $parc-white;
+  }
+}
+
+.navbar-wagon-white a {
+  color: $parc-white;
+}
+
+/* Logo */
+.navbar-wagon-brand img {
+  height: 50px;
+}
+
+
+/* Right section */
+.navbar-wagon-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Basic navbar item */
+.navbar-wagon-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+/* Navbar link */
+.navbar-wagon-link {
+  color: $parc-white !important;
+  font-size: 16px;
+}
+.navbar-wagon-link a:hover {
+  color: $parc-lightorange !important;
+  text-decoration: none;
+}
+
+

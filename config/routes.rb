@@ -29,6 +29,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  resources :posts, only: %I[index show]
   get :contact, to: 'pages#contact'
   get :sponsorship, to: 'pages#sponsorship'
   get :team, to: 'pages#team'
@@ -37,5 +38,12 @@ Rails.application.routes.draw do
     root to: 'items#index'
     resources :tickets, only: %I[create show]
     get '/:ticket_id/merci', to: 'tickets#thank_you', as: :thank_you
+  end
+
+  authenticate :user, ->(u) {u.admin} do
+    namespace :admin do
+      root to:'posts#new'
+      resources :posts, only: %I[new create edit update destroy]
+    end
   end
 end
