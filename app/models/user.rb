@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                     :bigint(8)        not null, primary key
+#  admin                  :boolean          default(FALSE)
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  email                  :string           default(""), not null
@@ -27,4 +28,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :tickets, dependent: :nullify
+  has_many :posts, dependent: :destroy
 end
