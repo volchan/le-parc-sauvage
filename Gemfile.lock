@@ -171,7 +171,6 @@ GEM
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
     parallel (1.12.1)
-    parity (2.4.0)
     parser (2.5.1.2)
       ast (~> 2.4.0)
     pg (1.1.3)
@@ -327,7 +326,6 @@ DEPENDENCIES
   mapbox-gl-rails
   money-rails (> 1.10)
   overcommit
-  parity
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
