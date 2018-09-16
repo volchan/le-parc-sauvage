@@ -1,6 +1,7 @@
 .wrap-contact {
   background-color: white;
   padding: 30px;
+  min-height: calc(100vh - 140px);
 }
 .wrap-contact p {
   padding-left: 35px;
@@ -8,4 +9,14 @@
 
 .wrapper-feed {
   padding: 30px 0;
+}
+
+.wrap-image {
+  display:flex;
+  justify-content: center;
+  color: white;
+}
+
+.back-img {
+  background-size: cover;
 }
