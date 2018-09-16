@@ -5,9 +5,34 @@
     <%= wicked_pdf_stylesheet_link_tag 'application' %>
   </head>
   <body onload='number_pages'>
-    <p><%= @ticket.user.full_name %></p>
-    <p><%= @ticket.item.name %></p>
-    <p><%= @ticket.item.format_price %></p>
-    <p><%= @ticket.code %></p>
+
+    <h1 class="text-center">Votre ticket</h1>
+    <h3><%= @ticket.user.full_name.tr("_", " ") %></h3>
+    <h5>Du <%= @ticket.from.strftime("%d/%m/%Y") %> au <%= @ticket.to.strftime("%d/%m/%Y") %></h5>
+    <h5><%= @ticket.item.name %></h5>
+    <h5>Tarif : <%= @ticket.item.format_price %></h5>
+    <p>Votre numéro de réservation : <%= @ticket.stripe_token  %></p>
+    <p>Votre code : <%= @ticket.code %></p>
+
+    <h3>Adresse</h3>
+    <p>Le Parc Sauvage <br />
+    C.I.R.C.A.S <br />
+    D84 <br />
+    24320 La Tour Blanche Cercles </p>
+
+    <style type="text/css">
+      h5 {
+        display: inline;
+        justify-content: space-around;
+      }
+
+      p, h3, h5 {
+        padding: 5px 20px 5px;
+      }
+      h1 {
+        padding: 10px;
+      }
+    </style>
+
   </body>
 </html>
