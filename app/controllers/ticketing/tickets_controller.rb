@@ -6,7 +6,9 @@ module Ticketing
         stripe_token: ticket_params[:stripeToken],
         code: Devise.friendly_token,
         user: current_user,
-        item_id: ticket_params[:item_id]
+        item_id: ticket_params[:item_id],
+        from: ticket_params[:from],
+        to: ticket_params[:to]
       )
       redirect_to ticketing_thank_you_path(@ticket)
     end
@@ -24,7 +26,7 @@ module Ticketing
     private
 
     def ticket_params
-      params.permit(:stripeToken, :item_id)
+      params.permit(:stripeToken, :item_id, :from, :to)
     end
 
     def set_ticket
