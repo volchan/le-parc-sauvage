@@ -1,38 +1,39 @@
 
 <div class="container">
-  <div class="row">
+  <div class="wrap-contact">
+    <div class="presentation text-center">
+      <div class="row">
+        <div class="col">
+        <h2>Les actualités du Parc Sauvage</h2>
 
-    <div class="col">
-
-    <h1>LES ACTUALITÉS DU PARC SAUVAGE</h1>
-
-    <% @posts.each do |post| %>
-    <div class="post-card-index">
-      <div class="post-title-index">
-        <%= post.title %>
-      </div>
-      <div class="card-inside d-flex">
-        <div class="photo-index">
-          <%= image_tag(url_for(post.photo))%>
-        </div>
-        <div class="post-content-index">
-          <%= post.content.first(400) %> (...)
-          <div class="card-button">
-            <%= link_to "Lire la suite", post_path(post), class: "button content-btn" %>
+        <% @posts.each do |post| %>
+        <div class="post-card-index">
+          <div class="post-title-index">
+            <%= post.title %>
           </div>
+          <div class="card-inside d-flex">
+            <div class="photo-index">
+              <%= image_tag(url_for(post.photo))%>
+            </div>
+            <div class="post-content-index">
+              <%= post.content.first(400) %> (...)
+              <div class="card-button">
+                <%= link_to "Lire la suite", post_path(post), class: "button content-btn" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        <% if user_signed_in? and current_user.admin? %>
+            <div class="index-link">
+              <%= link_to "Ajouter un article", new_admin_post_path, class: "button card-button" %>
+            </div>
+        <% end %>
+
         </div>
       </div>
     </div>
-    <% end %>
-
-
-    <% if user_signed_in? and current_user.admin? %>
-        <div class="index-link">
-          <%= link_to "Ajouter un article", new_admin_post_path, class: "button card-button" %>
-        </div>
-    <% end %>
-
-  </div>
   </div>
 </div>
 

@@ -4,6 +4,13 @@
 
 
 .photo-index img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.photo-show img {
   width: 400px;
   height: 400px;
   object-fit: cover;
