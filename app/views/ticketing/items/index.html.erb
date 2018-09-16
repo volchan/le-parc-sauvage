@@ -1,50 +1,52 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <table class="table table-bordered table-stripped">
-        <thead>
-          <tr>
-            <th scope="col">Tarifs Individuels</th>
-            <th>Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @individual_items.each do |item| %>
+  <div class="wrap-contact">
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered table-stripped">
+          <thead>
+            <tr>
+              <th scope="col">Tarifs Individuels</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @individual_items.each do |item| %>
             <tr class="text-center">
               <td scope="row"><%= item.name %></td>
               <td>
-                  <%= item.format_price %>
-                  <% unless item.format_price == 'gratuit' %>
-                    <%= render 'stripe_form', item: item %>
-                  <% end %>
+                <%= item.format_price %>
+                <% unless item.format_price == 'gratuit' %>
+                <%= render 'stripe_form', item: item %>
+                <% end %>
               </td>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <table class="table table-bordered table-stripped">
-        <thead>
-          <tr>
-            <th scope="col">Tarifs de groupe</th>
-            <th>Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @group_items.each do |item| %>
-          <tr class="text-center">
-            <td scope="row"><%= item.name %></td>
-            <td>
-              <p><input type="number" value="1" class="form-control" style="width: 100px;"> x <%= item.format_price %></p>
-              <%= render 'stripe_form', item: item %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered table-stripped">
+          <thead>
+            <tr>
+              <th scope="col">Tarifs de groupe</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @group_items.each do |item| %>
+            <tr class="text-center">
+              <td scope="row"><%= item.name %></td>
+              <td>
+                <p><input type="number" value="1" class="form-control d-inline" style="width: 100px;"> x <%= item.format_price %></p>
+                <%= render 'stripe_form', item: item %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
