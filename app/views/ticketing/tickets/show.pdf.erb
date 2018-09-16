@@ -8,6 +8,7 @@
 
     <h1 class="text-center">Votre ticket</h1>
     <h3><%= @ticket.user.full_name.tr("_", " ") %></h3>
+    <h5>Du <%= @ticket.from.strftime("%d/%m/%Y") %> au <%= @ticket.to.strftime("%d/%m/%Y") %></h5>
     <h5><%= @ticket.item.name %></h5>
     <h5>Tarif : <%= @ticket.item.format_price %></h5>
     <p>Votre numéro de réservation : <%= @ticket.stripe_token  %></p>
