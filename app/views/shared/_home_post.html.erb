@@ -1,13 +1,12 @@
 <div class="wrapper-feed">
 <div class="row">
   <div class="col text-center">
-    <h2 >Actualités du parc</h2>
+    <h2 class="mb-3">Actualités du parc</h2>
   </div>
 </div>
 <div class="row row-feed">
   <% Post.all.order(created_at: :desc).last(4).each do |post| %>
   <div class="col">
-
     <div class="display-feed">
       <%= link_to post_path(post), style: "color:$parc-black !important;" do%>
       <div class="photo-index-new">
