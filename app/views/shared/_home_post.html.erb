@@ -1,0 +1,24 @@
+<div class="wrapper-feed">
+<div class="row">
+  <div class="col text-center">
+    <h2 >Actualités du parc</h2>
+  </div>
+</div>
+<div class="row row-feed">
+  <% Post.all.order(created_at: :desc).last(4).each do |post| %>
+  <div class="col">
+
+    <div class="display-feed">
+      <%= link_to post_path(post), style: "color:$parc-black !important;" do%>
+      <div class="photo-index-new">
+        <%= image_tag(url_for(post.photo)) %>
+      </div>
+      <div  class= "title-feed" ><%= post.title %></div>
+      <%= link_to "Lire la suite", post_path(post), class: "button", id:"button-news"%>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+
