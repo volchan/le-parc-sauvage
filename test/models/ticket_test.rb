@@ -5,7 +5,9 @@
 #  id           :bigint(8)        not null, primary key
 #  additional   :integer
 #  code         :string
+#  from         :date
 #  stripe_token :string
+#  to           :date
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  item_id      :bigint(8)
