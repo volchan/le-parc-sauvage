@@ -24,6 +24,7 @@ gem 'webpacker'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'mapbox-gl-rails'
+gem 'parity'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
