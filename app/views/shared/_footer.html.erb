@@ -5,6 +5,22 @@
     <a href="#"><i class="fab fa-twitter" target="_blank"></i></a>
   </div>
   <div class="footer-copyright">
-    Ce site fait avec <i class="fa fa-heart"></i> par Le Wagon
+    Ce site a été fait avec <i class="fa fa-heart"></i> par Carine Sybille Claire Stéphane & Théo
   </div>
+
+  <div class="footer-sign-in-out">
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "footer-sign-in-out", style: 'color:#f5f9fa;' do %>
+      <i class="fas fa-sign-out-alt"></i>
+      <span> <%= t(".sign_out", default: "Déconnexion") %>
+      </span>
+    <% end %>
+  <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <% end %>
+
+  </div>
+
+
 </div>
