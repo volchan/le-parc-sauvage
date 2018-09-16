@@ -1,50 +1,72 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <table class="table table-bordered table-stripped">
-        <thead>
-          <tr>
-            <th scope="col">Tarifs Individuels</th>
-            <th>Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @individual_items.each do |item| %>
-            <tr class="text-center">
-              <td scope="row"><%= item.name %></td>
-              <td>
+  <div class="wrap-contact">
+    <div class="row">
+      <div class="col">
+        <h1>Dates de visites</h1>
+      </div>
+    </div>
+      <%= simple_form_for :dates do |f| %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :from, label: 'du', input_html: { class: 'datepicker' } %>
+          </div>
+          <div class="col">
+            <%= f.input :to, label: 'au', input_html: { class: 'datepicker' } %>
+          </div>
+        </div>
+      <% end %>
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered table-stripped">
+          <thead>
+            <tr>
+              <th scope="col">Tarifs Individuels</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @individual_items.each do |item| %>
+              <tr class="text-center">
+                <td scope="row"><%= item.name %></td>
+                <td>
                   <%= item.format_price %>
                   <% unless item.format_price == 'gratuit' %>
-                    <%= render 'stripe_form', item: item %>
+                  <%= render 'stripe_form', item: item %>
                   <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <table class="table table-bordered table-stripped">
-        <thead>
-          <tr>
-            <th scope="col">Tarifs de groupe</th>
-            <th>Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @group_items.each do |item| %>
-          <tr class="text-center">
-            <td scope="row"><%= item.name %></td>
-            <td>
-              <p><input type="number" value="1" class="form-control" style="width: 100px;"> x <%= item.format_price %></p>
-              <%= render 'stripe_form', item: item %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered table-stripped">
+          <thead>
+            <tr>
+              <th scope="col">Tarifs de groupe</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @group_items.each do |item| %>
+              <tr class="text-center">
+                <td scope="row"><%= item.name %></td>
+                <td>
+                  <p><input type="number" value="1" class="form-control d-inline" style="width: 100px;"> x <%= item.format_price %></p>
+                  <%= render 'stripe_form', item: item %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
+
+<%= content_for :after_js do %>
+  <%= javascript_pack_tag('datepicker') %>
+  <%= stylesheet_pack_tag('datepicker') %>
+<% end %>
