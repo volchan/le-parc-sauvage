@@ -16,10 +16,16 @@
             </div>
           </div>
 
-          <%= link_to "Modifier mon article", edit_admin_post_path(@post), class: "button" %>
-          <%= link_to "Supprimer cet article", admin_post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" }, class: "button" %>
-        <br>
-          <%= link_to "Retour à tous les articles", posts_path, class: "button" %>
+          <% if user_signed_in? and current_user.admin? %>
+
+            <%= link_to "Modifier mon article", edit_admin_post_path(@post), class: "button" %>
+            <%= link_to "Supprimer cet article", admin_post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" }, class: "button" %>
+
+          <% end %>
+
+
+          <br>
+            <%= link_to "Retour à tous les articles", posts_path, class: "button" %>
         </div>
       </div>
 
