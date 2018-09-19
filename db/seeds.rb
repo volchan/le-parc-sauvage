@@ -11,6 +11,7 @@ Post.destroy_all
 User.destroy_all
 
 user = User.create!(first_name: "Claire", last_name: "Gautier", admin: true, email: "claire.gautier@edhec.com", password: "claire")
+user = User.create!(first_name: "Alex", last_name: "Flyprod", admin: true, email: "alexflyprod@gmail.com", password: "parcsauvage")
 
 post_one = Post.create!(title: "Ouverture du Parc prochainement !",
             content: "Le CIRCAS entame en 2018 la construction du parc animalier. Il proposera au grand public un parcours ludique et accessible à tous au cours duquel vous pourrez observer de nombreuses espèces d’aniamaux, en particulier des rapaces, mais aussi une mini-ferme et d'autres surprises. Des espaces détente, restauration, points info, mais aussi des spectacles d'oiseaux en vol libre seront proposés. De quoi régaler petits et grands, avec un moment de détente et de découverte! Qui sommes-nous? Le Centre Inter Régional pour la Conservation des Animaux Sauvages est une association loi 1901 qui a pour objectif la préservation de la faune et la flore. Nous mettons en place un projet axé autour de LA Mission: Un Parc Zoologique dédié à la découverte et la connaissance des oiseaux de proie.",
